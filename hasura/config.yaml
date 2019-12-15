@@ -1,0 +1,2 @@
+admin_secret: bearsbeets
+endpoint: https://subme-hasura.herokuapp.com/v1/graphql

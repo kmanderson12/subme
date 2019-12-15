@@ -1,0 +1,159 @@
+{
+  "functions": [],
+  "remote_schemas": [],
+  "query_collections": [],
+  "allowlist": [],
+  "version": 2,
+  "tables": [
+    {
+      "table": "online_users",
+      "is_enum": false,
+      "configuration": {
+        "custom_root_fields": {
+          "select": null,
+          "select_by_pk": null,
+          "select_aggregate": null,
+          "insert": null,
+          "update": null,
+          "delete": null
+        },
+        "custom_column_names": {}
+      },
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": [],
+      "computed_fields": []
+    },
+    {
+      "table": "organizations",
+      "is_enum": false,
+      "configuration": {
+        "custom_root_fields": {
+          "select": null,
+          "select_by_pk": null,
+          "select_aggregate": null,
+          "insert": null,
+          "update": null,
+          "delete": null
+        },
+        "custom_column_names": {}
+      },
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": [],
+      "computed_fields": []
+    },
+    {
+      "table": "users",
+      "is_enum": false,
+      "configuration": {
+        "custom_root_fields": {
+          "select": null,
+          "select_by_pk": null,
+          "select_aggregate": null,
+          "insert": null,
+          "update": null,
+          "delete": null
+        },
+        "custom_column_names": {}
+      },
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [
+        {
+          "role": "user",
+          "comment": null,
+          "permission": {
+            "set": {},
+            "check": {
+              "auth0_id": {
+                "_eq": "X-Hasura-User-Id"
+              }
+            },
+            "columns": [
+              "id",
+              "name",
+              "auth0_id",
+              "created_at",
+              "updated_at",
+              "last_seen"
+            ]
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "comment": null,
+          "permission": {
+            "allow_aggregations": false,
+            "computed_fields": [],
+            "columns": [],
+            "filter": {}
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "comment": null,
+          "permission": {
+            "set": {},
+            "columns": [],
+            "filter": {
+              "auth0_id": {
+                "_eq": "X-Hasura-User-Id"
+              }
+            }
+          }
+        }
+      ],
+      "delete_permissions": [
+        {
+          "role": "user",
+          "comment": null,
+          "permission": {
+            "filter": {
+              "auth0_id": {
+                "_eq": "X-Hasura-User-Id"
+              }
+            }
+          }
+        }
+      ],
+      "event_triggers": [],
+      "computed_fields": []
+    },
+    {
+      "table": "users_organizations",
+      "is_enum": false,
+      "configuration": {
+        "custom_root_fields": {
+          "select": null,
+          "select_by_pk": null,
+          "select_aggregate": null,
+          "insert": null,
+          "update": null,
+          "delete": null
+        },
+        "custom_column_names": {}
+      },
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": [],
+      "computed_fields": []
+    }
+  ]
+}
