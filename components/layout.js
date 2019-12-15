@@ -8,7 +8,7 @@ function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Next.js + Auth0 + Hasura</title>
+        <title>SubMe</title>
       </Head>
 
       <Header user={currentUser} />

@@ -5,6 +5,7 @@ import { UserContext } from '../lib/UserProvider';
 
 function CurrentUser({ children }) {
   const { user, getUser } = useContext(UserContext);
+
   const userObj = user.users_by_pk;
   const { name, email } = userObj;
   return user ? (
