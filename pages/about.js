@@ -6,7 +6,6 @@ import CurrentUser from '../components/UserData';
 function About() {
   return (
     <>
-      <CurrentUser />
       <h1>About</h1>
       <p>
         This is the about page, navigating between this page and <i>Home</i> is
