@@ -2,7 +2,7 @@ function hasuraJwtClaim(user, context, callback) {
   const QUERY_BODY = {
     // could get roles here
     query: `{
-              user(where: {auth0_user_id: {_eq: "${user.user_id}"}}) {
+              users_by_pk(where: {auth0_user_id: {_eq: "${user.user_id}"}}) {
                   id
                 }
             }`

@@ -9,13 +9,10 @@ import { UserContext } from '../lib/UserProvider';
 function CurrentUser({ children }) {
   const { user, getUser } = useContext(UserContext);
 
-  const userObj = user
-    ? user.users_by_pk
-    : { user: { name: null, email: null } };
+  const userObj = user.users[0];
 
-  console.log(userObj);
-  const { name, email, users_organizations } = userObj;
-
+  const { name, email, users_organizations, teachers } = userObj;
+  let absences = teachers[0].teacher_absences;
   return user ? (
     <div>
       <h1>Welcome, {name}!</h1>
@@ -24,19 +21,18 @@ function CurrentUser({ children }) {
       {users_organizations.map(org => {
         let role = _.capitalize(org.role.role);
         let orgName = org.organization.name;
-        let absences = org.organization.teacher_absences;
         return (
           <>
             <p key={org.id}>
               {orgName} - {role}
             </p>
-            <h2>Scheduled Absences:</h2>
-            {absences.map(absence => (
-              <p>{absence.date}</p>
-            ))}
           </>
         );
       })}
+      <h2>Scheduled Absences:</h2>
+      {absences.map(absence => (
+        <p>{absence.date}</p>
+      ))}
     </div>
   ) : (
     <p>Please sign in.</p>

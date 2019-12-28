@@ -1,7 +1,7 @@
 import React from 'react';
 import { withApollo } from '../lib/apollo';
 import Layout from '../components/layout';
-import CurrentUser from '../components/UserData';
+import CurrentUser from '../components/CurrentUser';
 
 function About() {
   return (

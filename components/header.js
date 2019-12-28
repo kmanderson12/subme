@@ -40,20 +40,14 @@ function Header({ user }) {
             </div>
             <div>
               {user ? (
-                <Link>
-                  <a
-                    href="/api/logout"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                  >
+                <Link href="/api/logout">
+                  <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
                     Logout
                   </a>
                 </Link>
               ) : (
-                <Link>
-                  <a
-                    href="/api/login"
-                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-                  >
+                <Link href="/api/login">
+                  <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
                     Sign In
                   </a>
                 </Link>
